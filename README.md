@@ -27,3 +27,6 @@ svg &amp; canvas
 ```
 #### 路径(path)
   *任何图形均可由path生成*
+  ``` html
+  <path d="M10 10 H 90 V 90 H 10 Z" fill="transparent" stroke="black"/>
+  ```
