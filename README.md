@@ -61,3 +61,10 @@ svg &amp; canvas
   <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#RadialGradient1)"/> 
 </svg>
 ```
+#### 文本相关(texts)
+``` html
+<?xml version="1.0" standalone="no"?>
+<svg width="120" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <text x="10" y="10">Hello World!</text>
+</svg>
+*文本style同样只是font-family、font-style、font-weight、font-variant、font-stretch、font-size、font-size-adjust、kerning、letter-spacing、word-spacing和text-decoration*
