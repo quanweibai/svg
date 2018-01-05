@@ -79,3 +79,5 @@ svg &amp; canvas
   </text>
 </svg>
 ```
+#### 动画
+##### animate标签
