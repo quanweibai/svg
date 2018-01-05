@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>d3-cluster</title>
+  <link rel="stylesheet" href="./styles/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    .map-container {
+      width: 900px;
+      height: 500px;
+      background: #ccc;
+    }
+    .node circle {
+        fill: #999;
+    }
+    .node text {
+        font: 10px sans-serif;
+    }
+    .node--internal circle {
+        fill: #555;
+    }
+    .node--internal text {
+        text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+    }
+    .link {
+        fill: none;
+        stroke: #555;
+        stroke-opacity: 0.4;
+        stroke-width: 1.5px;
+    }
+  </style>
+</head>
+<body>
+  <svg width="1200" height="600"></svg>
+  <script src='./js/d3.min.js'></script>
+  <script src='./js/jquery-3.2.1.min.js'></script>
+  <script>
+        var svg = d3.select("svg"),
+            width = +svg.attr("width"),
+            height = +svg.attr("height"),
+            g = svg.append("g").attr("transform", "translate(40,0)");
+
+        var cluster = d3.cluster()
+            .size([width - 600, height - 100])
+            .separation(function(a, b) {
+              return a.parent == b.parent ? 1 : 1;
+            });
+
+        var stratify = d3.stratify()
+            .id(function(d) { return d.name; })
+            .parentId(function(d) { return d.parent; });
+
+        d3.csv("/js/flare.csv", function(error, data) {
+          if (error) throw error;
+
+          var root = stratify(data)
+              .sort(function(a, b) { return (a.height - b.height) || a.id.localeCompare(b.id); });
+
+          cluster(root);
+          console.log(root,  'root')
+
+          var link = g.selectAll(".link")
+              .data(root.descendants().slice(1))
+            .enter().append("path")
+              .attr("class", "link")
+              .attr("d", function(d) {
+                return "M" + d.x + "," + d.y
+                    + "C" + (d.parent.x + 100) + "," + d.y
+                    + " " + (d.parent.x + 100) + "," + d.parent.y
+                    + " " + d.parent.x + "," + d.parent.y;
+              });
+
+          var node = g.selectAll(".node")
+              .data(root.descendants())
+            .enter().append("g")
+              .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
+              .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+
+          node.append("circle")
+              .attr("r", 2.5);
+
+          node.append("text")
+              .attr("dy", 3)
+              .attr("x", function(d) { return d.children ? -8 : 8; })
+              .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+              .text(function(d) { return d.id; });
+        });
+    </script>
+</body>
+    
