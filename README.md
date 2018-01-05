@@ -70,6 +70,7 @@ svg &amp; canvas
 ```
   *文本style同样只是font-family、font-style、font-weight、font-variant、font-stretch、font-size、*
   *font-size-adjust、kerning、letter-spacing、word-spacing和text-decoration*
+  
  #### 文本路径
  ``` html
 <svg width='500' height='500'>
