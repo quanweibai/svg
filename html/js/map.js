@@ -17,7 +17,7 @@ var duration = 1000;
 // 地图path生成器
 var pathGene = d3.geoPath().projection(drillProjection);
 
-d3.json('https://vincentchina.github.io/svg/html/js/china.json', function(json) {
+d3.json('https://quanweibai.github.io/svg/html/js/china.json', function(json) {
 	if(!json)
 		return;
 	drillProjection.fitExtent([
