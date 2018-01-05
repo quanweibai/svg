@@ -25,3 +25,5 @@ svg &amp; canvas
   <path d="M20,230 Q40,205 50,230 T90,230" fill="none" stroke="blue" stroke-width="5"/>
 </svg>
 ```
+#### 路径(path)
+  *任何图形均可由path生成*
