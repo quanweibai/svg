@@ -33,3 +33,31 @@ svg &amp; canvas
   <path d="M10 10 H 90 V 90 H 10 Z" fill="transparent" stroke="black"/>
 </svg>
 ```
+#### 线性渐变 & 径向渐变
+  **线性**
+``` html
+<svg width="120" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+      <linearGradient id="Gradient2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="red"/>
+        <stop offset="50%" stop-color="black" stop-opacity="0"/>
+        <stop offset="100%" stop-color="blue"/>
+      </linearGradient>
+  </defs>
+  <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#Gradient2)"/>
+</svg>
+```
+  **径向**
+``` html
+<?xml version="1.0" standalone="no"?>
+<svg width="120" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+      <radialGradient id="RadialGradient1">
+        <stop offset="0%" stop-color="red"/>
+        <stop offset="100%" stop-color="blue"/>
+      </radialGradient>
+  </defs>
+ 
+  <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#RadialGradient1)"/> 
+</svg>
+```
