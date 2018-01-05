@@ -81,3 +81,25 @@ svg &amp; canvas
 ```
 #### 动画
 ##### animate标签
+``` html
+<svg width="400" height="400">
+  <circle cx="200" cy="200" r="50" fill="#29ABe2" >
+    <animate attributeName="r" attributeType="XML" from="50" to="80" begin="0s" dur="2s" fill="freeze" repeatCount="indefinite"/>
+  </circle>
+</svg>
+```
+``` html
+<svg width="400" height="400">
+  <circle cx="200" cy="200" r="50" fill="#29ABe2" >
+    <animate attributeName="r" attributeType="XML" values="50;80;50" begin="0s" dur="2s" fill="freeze" repeatCount="indefinite"/>
+  </circle>
+</svg>
+```
+``` html
+<svg width="400" height="400">
+  <circle cx="200" cy="200" r="50" fill="#29ABe2" >
+    <animate attributeName="r" attributeType="CSS" values="50;80;50" begin="0s" dur="2s" fill="freeze" repeatCount="indefinite"/>
+    <animate attributeName="fill-opacity" attributeType="CSS" values="1;0.5;1" begin="0s" dur="2s" fill="freeze" repeatCount="indefinite"/>
+  </circle>
+</svg>
+```
