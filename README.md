@@ -103,3 +103,13 @@ svg &amp; canvas
   </circle>
 </svg>
 ```
+##### animateTransform
+``` html
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <g> 
+    <text font-family="microsoft yahei" font-size="80" y="100" x="100">马</text>
+    <animateTransform attributeName="transform" begin="0s" dur="3s"  type="scale" from="1" to="1.5" repeatCount="indefinite"/>
+     <animateTransform attributeName="transform" begin="0s" dur="3s"  type="translate" from="100 100" to="150 150" repeatCount="indefinite"/>
+  </g>
+</svg>
+```
