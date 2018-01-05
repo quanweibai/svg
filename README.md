@@ -28,5 +28,8 @@ svg &amp; canvas
 #### 路径(path)
   *任何图形均可由path生成*
   ``` html
-  <path d="M10 10 H 90 V 90 H 10 Z" fill="transparent" stroke="black"/>
+  <?xml version="1.0" standalone="no"?>
+  <svg width="200" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 10 H 90 V 90 H 10 Z" fill="transparent" stroke="black"/>
+  </svg>
   ```
