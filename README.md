@@ -109,7 +109,15 @@ svg &amp; canvas
   <g> 
     <text font-family="microsoft yahei" font-size="80" y="100" x="100">马</text>
     <animateTransform attributeName="transform" begin="0s" dur="3s"  type="scale" from="1" to="1.5" repeatCount="indefinite"/>
-     <animateTransform attributeName="transform" begin="0s" dur="3s"  type="translate" from="100 100" to="150 150" repeatCount="indefinite"/>
   </g>
+</svg>
+```
+##### animateMotion
+``` html
+<svg width="360" height="200" xmlns="http://www.w3.org/2000/svg">
+  <text font-family="microsoft yahei" font-size="40" x="0" y="0" fill="#cd0000">马
+    <animateMotion path="M10,80 q100,120 120,20 q140,-50 160,0" begin="0s" dur="3s" rotate="auto" repeatCount="indefinite"/>
+  </text>
+  <path d="M10,80 q100,120 120,20 q140,-50 160,0" stroke="#cd0000" stroke-width="2" fill="none" />
 </svg>
 ```
