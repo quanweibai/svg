@@ -67,5 +67,5 @@ svg &amp; canvas
 <svg width="120" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
    <text x="10" y="10">Hello World!</text>
 </svg>
-*文本style同样只是font-family、font-style、font-weight、font-variant、font-stretch、font-size、*
-*font-size-adjust、kerning、letter-spacing、word-spacing和text-decoration*
+  *文本style同样只是font-family、font-style、font-weight、font-variant、font-stretch、font-size、*
+  *font-size-adjust、kerning、letter-spacing、word-spacing和text-decoration*
