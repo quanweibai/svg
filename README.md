@@ -70,3 +70,12 @@ svg &amp; canvas
 ```
   *文本style同样只是font-family、font-style、font-weight、font-variant、font-stretch、font-size、*
   *font-size-adjust、kerning、letter-spacing、word-spacing和text-decoration*
+ #### 文本路径
+ ``` html
+<svg width='500' height='500'>
+  <path id="my_path" d="M 20,20 C 40,40 80,40 300,20" fill='#fff'/>
+  <text>
+    <textPath xlink:href="#my_path" fill='blue'>This text follows a curve.</textPath>
+  </text>
+</svg>
+```
